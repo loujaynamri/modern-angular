@@ -2,7 +2,8 @@
 <h1>{{title}}</h1>
 <button [disabled]="isDisables" (click)="onClick()">
   click me</button>
-<h1>{{count()}}</h1>
+<h1>count: {{count()}}</h1>
+<h1>double: {{doubleCount()}}</h1>
 <button (click)="increateCounter()">+</button>
 <button (click)="decreaseCounter()">-</button>
 <button (click)="resetCounter()">reset</button>

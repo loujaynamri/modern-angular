@@ -1,5 +1,4 @@
-import { Component , signal} from '@angular/core';
-import { __values } from 'tslib';
+import { Component , computed, effect, signal} from '@angular/core';
 
 @Component({
   imports: [],
@@ -16,6 +15,10 @@ export class Hello {
   }
 
   protected count = signal(0);
+  protected doubleCount=computed(()=>this.count()*2);
+  protected countLog = effect(()=>{
+    console.log("count changed",this.count())
+  })
   increateCounter(){
     //count++
     this.count.update(value => value+1);
