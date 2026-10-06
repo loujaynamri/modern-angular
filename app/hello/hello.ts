@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component , signal} from '@angular/core';
+import { __values } from 'tslib';
 
 @Component({
   imports: [],
@@ -12,5 +13,17 @@ export class Hello {
   protected onClick(){
     console.log('button clicked');
     this.isDisables=!this.isDisables;
+  }
+
+  protected count = signal(0);
+  increateCounter(){
+    //count++
+    this.count.update(value => value+1);
+  }
+  decreaseCounter(){
+    this.count.update(value => value-1);
+  }
+  resetCounter(){
+this.count.set(0);
   }
 }
